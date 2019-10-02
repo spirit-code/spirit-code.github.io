@@ -10,20 +10,38 @@
     <title>Spirit</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      a.github-fork-ribbon > img {
-        position: fixed;
-        top: 51px;
-        right: 0;
-        border: 0;
-        z-index: 10000;
+      @font-face {
+        font-family: "San Francisco";
+        font-weight: 200;
+        src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff");
+      }
+      @font-face {
+        font-family: "San Francisco";
+        font-weight: 400;
+        src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+      }
+      @font-face {
+        font-family: "San Francisco";
+        font-weight: 700;
+        src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+      }
+      /** Medium */
+      @font-face {
+        font-family: "San Francisco";
+        font-weight: 500;
+        src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+      }
+
+      /** Semi Bold */
+      @font-face {
+        font-family: "San Francisco";
+        font-weight: 600;
+        src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
       }
       @media (max-width: 767px) {
         a.github-fork-ribbon {
           display:none;
         }
-      }
-      body {
-        padding-top: 50px;
       }
       img.large-only {
         display: none;
@@ -44,10 +62,240 @@
       .jumbotron .btn {
         margin:0.5em;
       }
+      .hero {
+        width: 100vw;
+        height: calc(100vh - 50px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /*background-image: linear-gradient(rgba(255, 255, 255, 1.0) 0%, rgba(255, 255, 255, 1.0) 5%, rgba(255, 255, 255, 0.6) 100%), url("img/spins.png");*/
+        background-image: linear-gradient(rgba(34, 34, 34, 1.0) 5%, rgba(34, 34, 34, 0.5)), url("img/spins.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        margin-top:0;
+      }
+      .hero h1 {
+        font-size: 6em;
+      }
+      .hero p {
+        font-size: 3em;
+        max-width:20em;
+        font-weight: 500;
+        color: white;
+      }body {
+        padding-top: 50px;
+        font-size: 14pt;
+        font-family: "San Francisco", sans-serif;
+        font-weight: 300;
+      }
+      nav.navbar.navbar-inverse {
+        border:0;
+      }
+
+      .info-row {
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2em 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .info-row:nth-child(odd) {
+        flex-direction: row;
+      }
+      .info-row:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      .info-row > div:nth-child(1) {
+        padding: 0 2em;
+      }
+      .info-row > div:nth-child(2) {
+        text-align: center;
+        /* padding: 0 6em; */
+      }
+      .info-row > div > img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .info-row h1, .info-row h2, .info-row h3, .info-row h4, .info-row h5, .info-row h6 {
+        color:#333333;
+        font-weight: 500;
+      }
+      .info-row {
+        color:#555555;
+      }
+      .info-row b {
+        font-weight: 500; 
+      }
+      .info-header p {
+        color:#555555;
+      }
+
+      .darker-section {
+        background-color: #f7f7f7;
+      }
+
+      .darker-section .info-row h1, .info-row h2, .info-row h3, .info-row h4, .info-row h5, .info-row h6 {
+        color:#333333;
+      }
+      .darker-section .info-row {
+        color:#4d4d4d;
+      }
+      .darker-section .info-header p {
+        color:#4d4d4d;
+      }
+      @media (min-width: 768px) {
+        .info-row > div {
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+        }
+      }
+
+      .info-header {
+          width: 70%;
+          padding: 1em 0;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: left;
+        }
+
+      section {
+        padding: 2em 0;
+      }
+
+      pre {
+        background-color: #333333;
+        border: 0;
+        font-size: 8pt;
+        /* width: 60%; */
+        text-align: left;
+        /* text-color: #eeeeee; */
+        color: #66d9ef 
+        }
+
+       .navbar-inverse .navbar-nav > li > a {
+         color:#bbbbbb;
+       }
+
+      .highlight {
+        background-color: transparent;
+        max-width: 50%
+        /* font-size: 8pt; */
+        }
+      .highlight pre {
+        background-color: #333333;
+        border: 0;
+        font-size: 8pt;
+        width: 100%;
+        text-align: left;
+        }
+
+
+      .hero .logo-icon img {
+        width: 4.5em;
+      }
+      .hero .logo-text img {
+        width: 6.5em;
+      }
+      .hero .logo-both img {
+        width: 10em;
+      }
+      .hero .logo-both {
+        display: none;
+      }
+      @media screen and (max-height: 650px) {
+        .hero .logo-icon, .hero .logo-text {
+          display:none;
+        }
+        .hero .logo-both {
+          display:block;
+        }
+      }
+      @media screen and (max-height: 400px) {
+        .hero .logo-tagline {
+          display: none;
+        }
+      }
+      @media screen and (max-height: 300px) {
+        .hero .logo-both img {
+          width: auto;
+          height: calc(100vh - 75px);
+        }
+      }
+
+      .highlight .hll { background-color: #49483e }
+      /* .highlight  { background: #272822; color: #f8f8f2 } */
+      .highlight .c { color: #75715e } /* Comment */
+      .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
+      .highlight .k { color: #66d9ef } /* Keyword */
+      .highlight .l { color: #ae81ff } /* Literal */
+      .highlight .n { color: #f8f8f2 } /* Name */
+      .highlight .o { color: #f92672 } /* Operator */
+      .highlight .p { color: #f8f8f2 } /* Punctuation */
+      .highlight .cm { color: #75715e } /* Comment.Multiline */
+      .highlight .cp { color: #75715e } /* Comment.Preproc */
+      .highlight .c1 { color: #75715e } /* Comment.Single */
+      .highlight .cs { color: #75715e } /* Comment.Special */
+      .highlight .gd { color: #f92672 } /* Generic.Deleted */
+      .highlight .ge { font-style: italic } /* Generic.Emph */
+      .highlight .gi { color: #a6e22e } /* Generic.Inserted */
+      .highlight .gs { font-weight: bold } /* Generic.Strong */
+      .highlight .gu { color: #75715e } /* Generic.Subheading */
+      .highlight .kc { color: #66d9ef } /* Keyword.Constant */
+      .highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+      .highlight .kn { color: #f92672 } /* Keyword.Namespace */
+      .highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+      .highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+      .highlight .kt { color: #66d9ef } /* Keyword.Type */
+      .highlight .ld { color: #e6db74 } /* Literal.Date */
+      .highlight .m { color: #ae81ff } /* Literal.Number */
+      .highlight .s { color: #e6db74 } /* Literal.String */
+      .highlight .na { color: #a6e22e } /* Name.Attribute */
+      .highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+      .highlight .nc { color: #a6e22e } /* Name.Class */
+      .highlight .no { color: #66d9ef } /* Name.Constant */
+      .highlight .nd { color: #a6e22e } /* Name.Decorator */
+      .highlight .ni { color: #f8f8f2 } /* Name.Entity */
+      .highlight .ne { color: #a6e22e } /* Name.Exception */
+      .highlight .nf { color: #a6e22e } /* Name.Function */
+      .highlight .nl { color: #f8f8f2 } /* Name.Label */
+      .highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+      .highlight .nx { color: #a6e22e } /* Name.Other */
+      .highlight .py { color: #f8f8f2 } /* Name.Property */
+      .highlight .nt { color: #f92672 } /* Name.Tag */
+      .highlight .nv { color: #f8f8f2 } /* Name.Variable */
+      .highlight .ow { color: #f92672 } /* Operator.Word */
+      .highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+      .highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+      .highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+      .highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+      .highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+      .highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+      .highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+      .highlight .sc { color: #e6db74 } /* Literal.String.Char */
+      .highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+      .highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+      .highlight .se { color: #ae81ff } /* Literal.String.Escape */
+      .highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+      .highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+      .highlight .sx { color: #e6db74 } /* Literal.String.Other */
+      .highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+      .highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+      .highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+      .highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+      .highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+      .highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+      .highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+      .highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
 
     </style>
   </head>
   <body>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -57,56 +305,28 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Spirit</a>
+          <a class="navbar-brand" href="index.html" style="padding:5px;"><img src="img/logo.png" alt="Spirit" style="height:100%;"/></a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="collapse navbar-collapse navbar-right">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Overview</a></li>
-            <li><a href="https://github.com/spirit-code/spirit/releases/latest">Download</a></li>
-            <li><a href="https://github.com/spirit-code/spirit">Source</a></li>
-            <li><a href="https://iffwiki.fz-juelich.de/index.php/Spirit">Wiki</a></li>
-            <li><a href="https://github.com/spirit-code/spirit/issues">Feedback</a></li>
-            <li><a href="web.html">Spirit Web</a></li>=
+            <li><a href="web.html">WebApp</a></li>
+            <li><a href="https://spirit-docs.readthedocs.io/">Documentation</a></li>
+            <li><a href="https://github.com/spirit-code/spirit">GitHub <img src="img/GitHub-Mark-Light-64px.png" alt="GitHub Icon" style="margin-left: 5px; margin-top:-5px; height:20px;"/></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <aside>
-      <a href="https://github.com/spirit-code/spirit" title="Fork me on GitHub" class="github-fork-ribbon">
-        <img src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
-      </a>
-    </aside>
-    <div class="jumbotron">
-      <div class="container">
+    <div class="hero">
+      <div class="hero-inner">
+        <p class="logo-icon"><img src="img/logo_icon.png" alt="Spirit Icon"/></p>
+        <p class="logo-text"><img src="img/logo_text.png" alt="Spirit Text"/></p>
+        <p class="logo-both"><img src="img/logo.png" alt="Spirit Logo"/></p>
         <h1 class="sr-only">Spirit</h1>
-        <p><strong>Spirit</strong> &ndash; Atomistic Spin Code </p>
-        <p> Modular C++ code for numerical optimizations and dynamics simulations of atomistic spin systems &ndash; providing <strong>live visualisations</strong> during simulations.</p>
-        <p><a class="btn btn-primary btn-lg" href="https://github.com/spirit-code/spirit/releases/latest" role="button">Download Spirit</a> or <a class="btn btn-primary btn-lg" href="web.html" role="button">Try the Web version</a></p>
+        <p class="logo-tagline">Magnetism Simulation Framework</p>
       </div>
     </div>
-    <div class="container">
-      <div class="col-md-6">
-        <h2>Distinguishing features</h2>
-        <h3>Portability</h3>
-        <p>This code is written in <strong>platform-independent</strong> C++, the build process is platform-independent as well, due to the use of <a href="https://cmake.org/">CMake</a>. This code has been tested on Windows 7 and 10, OS X Yosemite and upwards and various Linux distributions.</p>
-        <h3>Few dependencies</h3>
-        <p>During development of the Spirit core, a key focus was the <strong>independence from third party libraries</strong>. Due to this, the core can be used in almost any context and for various purposes.</p>
-        <h3>Modularity and extensibility</h3>
-        <p>Spirit utilizes a <strong>modular class structure</strong> to enable flexible workflows. This allows the core to be extended for your specific simulation requirements and to be used with a variety of user interfaces.</p>
-        <h3>User Interface with live visualisation</h3>
-        <p>Spirit comes with an <strong>optional graphical user interface</strong> (GUI), based on <a href="https://www.qt.io/">Qt</a> and <a href="https://www.opengl.org/">OpenGL</a>. For use on clusters and other headless systems, <strong>command line interfaces</strong> are also available. The core provides a C API, so that other UIs or programming languages may easily incorporate it.</p>
-        <h3>Web interface for education and portable presentations</h3>
-        <p>A web-based interface has been written, which runs in most modern browsers and even on some mobile devices. The Spirit core can be transpiled to JavaScript using <a href="https://kripken.github.io/emscripten-site/">Emscripten</a>, allowing you to <strong>simulate spin dynamics right in your browser</strong>.</p>
-        <p><a href="web.html" role="button">Try Spirit Web!</a></p>
-      </div>
-      <div class="col-md-6">
-        <img src="img/spinshalf.png" class="large-only" alt="Spins simulated using Spirit Web" style="max-width:100%; max-height:100%; border-left:2px solid #333333">
-      </div>
-      <div class="col-md-12">
-        <img src="img/spins.png" class="small-only" alt="Spins simulated using Spirit Web" style="max-width:100%; max-height:100%;">
-      </div>
-    </div>
+
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
