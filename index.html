@@ -193,10 +193,14 @@
 
       .highlight {
         background-color: transparent;
-        max-width: 50%;
         flex-grow: 1;
-        /* font-size: 8pt; */
         }
+      @media (min-width: 768px) {
+
+      .highlight {
+        max-width: 50%;
+        }
+      }
       .highlight pre {
         background-color: #333333;
         border: 0;
@@ -398,10 +402,10 @@
               <source src="mov/vortex_compressed.mov" type="video/mp4">
               Your browser does not support the video tag.
           </video loop> -->
-          <video loop width=100% controls autoplay rewind>
-            <source src="mov/bobber.mov" type="video/mp4">
+          <video width=100% loop controls data-scrollstart="true">
+            <source src="mov/bobber.mov" type="video/mp4" />
             Your browser does not support the video tag.
-          </video loop>
+          </video>
         </div>
       </div>
     </div>
@@ -499,5 +503,22 @@
     </section>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+      function isScrolledIntoView(elem)
+      {
+          return $(window).scrollTop() + $(window).height() >= $(elem).offset().top;
+      }
+      function startVisibleVideos() {
+        $('video[data-scrollstart="true"]').each(function(){
+          if (isScrolledIntoView(this)) {
+              $(this).attr("data-scrollstart", "false");
+              $(this)[0].play();
+          }
+        });
+      }
+      startVisibleVideos();
+      $(window).on('scroll', startVisibleVideos);
+      $(window).on('resize', startVisibleVideos);
+    </script>
   </body>
 </html>
