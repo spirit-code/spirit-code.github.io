@@ -7,6 +7,9 @@
     <meta name="description" content="Spirit - atomistic spin simulation library">
     <meta name="author" content="Florian Rhiem">
     <meta name="keywords" content="spins,skyrmions,simulation,webgl">
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <title>Spirit</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -87,12 +90,11 @@
         color: white;
       }
       @media screen and (min-width: 840px) {
-      .hero p {
-        font-size: 3em;
-      }
+        .hero p {
+          font-size: 3em;
+        }
       }
       body {
-        overflow: hidden;
         padding-top: 50px;
         font-size: 14pt;
         font-family: "San Francisco", sans-serif;
@@ -186,11 +188,13 @@
 
        .navbar-inverse .navbar-nav > li > a {
          color:#bbbbbb;
+         font-size: 12pt;
        }
 
       .highlight {
         background-color: transparent;
-        max-width: 50%
+        max-width: 50%;
+        flex-grow: 1;
         /* font-size: 8pt; */
         }
       .highlight pre {
@@ -198,21 +202,19 @@
         border: 0;
         font-size: 8pt;
         width: 100%;
+        flex-grow: 1;
         text-align: left;
         }
 
+
       .hero .logo-icon img {
-        max-height:225px;
-        max-width: 100%;
-        margin-top:100px;
+        width: 4.5em;
       }
       .hero .logo-text img {
-        width: 360px;
-        max-width: 100%;
+        width: 6.5em;
       }
       .hero .logo-both img {
-        max-height:225px;
-        max-width:100%;
+        width: 10em;
       }
       .hero .logo-both {
         display: none;
@@ -319,9 +321,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse navbar-right">
           <ul class="nav navbar-nav">
-            <li><a href="web.html">WebApp</a></li>
+            <li><a href="web.html">Web App</a></li>
             <li><a href="https://spirit-docs.readthedocs.io/">Documentation</a></li>
-            <li><a href="https://github.com/spirit-code/spirit">GitHub <img src="img/GitHub-Mark-Light-64px.png" alt="GitHub Icon" style="margin-left: 5px; margin-top:-5px; height:20px;"/></a></li>
+            <li><a href="https://github.com/spirit-code/spirit">GitHub <img src="img/GitHub-Mark-Light-64px.png" alt="GitHub Icon" style="margin-left: 5px; margin-top:-5px; height:18px;"/></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -337,6 +339,164 @@
       </div>
     </div>
 
+    <section>
+    <div class="container">
+      <div class="info-header">
+          <p class="text-center"><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.224414" role="button" class="btn btn-primary">The Paper: Phys. Rev. B 99, 224414 (2019)</a></p>
+      </div>
+      <div class="info-header">
+        <h2>Open source, cross-platform and easy to use</h2>
+        <p>Spirit runs on most Linux, macOS and Windows systems and even in your browser!</p>
+      </div>
+      <div class="info-row">
+        <div>
+          <h3>All the basics</h3>
+          <p>
+            Monte Carlo with an adaptive cone scheme, LLG dynamics including finite temperature and spin currents (both STT and SOT)
+          </p>
+          <h3>Cutting edge methodology</h3>
+          <p>
+            Geodesic nudged elastic band calculations, minimum mode following, harmonic transition state theory
+          </p>
+          <h3>A single, consistent framework</h3>
+          <p>With everything implemented in a single framework, all methods are easy to use and can be quickly combined with eachother</p>
+        </div>
+        <div>
+          <img src="img/ddi_vortex_cube.png" width=80% alt="Spins simulated using Spirit Web">
+        </div>
+      </div>
+      <div class="info-row">
+      <div>
+        <h3>Portability</h3>
+        <p>
+          Spirit is a <b>cross-platform</b> C++ code and has graphical user interfaces
+          running on Linux, macOS, Windows and even the Web!
+          You can also script it using Python.
+        </p>
+        <h3>Performance</h3>
+        <p>
+          Run parallelisations using OpenMP for CPUs or CUDA for GPUs to significantly speed up your calculations.
+          Spirit provides fast and precise dipolar interactions using parallelised FFTs.
+        </p>
+      </div>
+      <div>
+        <img src="img/cross_platform.png" width=100% alt="Spins simulated using Spirit Web">
+      </div>
+      </div>
+      <div class="info-row">
+        <div>
+          <!-- <h3>Graphical user interface</h3> -->
+          <h3>Powerful real-time Visualisations</h3>
+          <p>Complex states may emerge in 3D systems, requiring advanced visualisations for effective work.</p>
+          <p>This often makes post-processing redundant and significantly decreases required developer effort.</p>
+          <p>Even for 2D systems, it is highly useful to have realtime visualisations available, enabling one to immediately assess the state of a simulation.</p>
+          <!-- <h3>Easy to use for post-processing</h3> -->
+        </div>
+        <div>
+          <!-- <img width=90% src="img/hopfion_rings.png" alt="Spins simulated using Spirit Web"> -->
+          <!-- <video loop width="400" controls autoplay rewind>
+              <source src="mov/vortex_compressed.mov" type="video/mp4">
+              Your browser does not support the video tag.
+          </video loop> -->
+          <video loop width=100% controls autoplay rewind>
+            <source src="mov/bobber.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video loop>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section style="background-color: #eee">
+      <div class="container">
+        <div class="info-header">
+          <h2>Easy to use in various ways</h2>
+          <p>
+            Whether simulating or post-processing, prototyping or automating,
+            small or large systems, Spirit provides the right tools
+          </p>
+        </div>
+        <div class="info-row">
+          <div>
+            <h3>Powerful desktop user interface</h3>
+            <p>
+              Fast and with highly useful realtime visualisations.
+              Use this tool to be more effective and save time on complex tasks.
+              Immediately understand what is going on in your system and save yourself the
+              manual effort of post-processing your simulations.
+            </p>
+          </div>
+          <div>
+            <img width=100% src="img/spirit_desktop.png" alt="Spins simulated using Spirit Web">
+          </div>
+        </div>
+        <div class="info-row">
+          <div>
+            <h3>Save time by scripting</h3>
+            <p>
+              Spirit makes it very easy to create Python scripts for your calculations and take full control over what happens.
+              Use an input file or call the Python API to configure the geometry and parameters of your system - the
+              choice is yours.
+            </p>
+            <p>
+              All features of the user interfaces can be reproduced in Python.
+              It is a great tool for automation of complex simulations.
+            </p>
+            <p>
+              We provide <a href="https://github.com/spirit-code/spirit">example scripts for some typical use cases</a>
+              and the documentation includes a <a href="https://spirit-docs.readthedocs.io/en/latest/core/docs/python-api/spirit.io.html">full reference of the Python API</a>.
+            </p>
+          </div>
+          <div class="highlight">
+<pre><span class="c1">### Import Spirit modules</span>
+<span class="kn">from</span> <span class="nn">spirit</span> <span class="kn">import</span> <span class="n">state</span>
+<span class="kn">from</span> <span class="nn">spirit</span> <span class="kn">import</span> <span class="n">configuration</span>
+<span class="kn">from</span> <span class="nn">spirit</span> <span class="kn">import</span> <span class="n">simulation</span>
+<span class="kn">from</span> <span class="nn">spirit</span> <span class="kn">import</span> <span class="n">io</span>
+
+<span class="n">cfgfile</span> <span class="o">=</span> <span class="s2">&quot;input/input.cfg&quot;</span>
+<span class="n">quiet</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="k">with</span> <span class="n">state</span><span class="o">.</span><span class="n">State</span><span class="p">(</span><span class="n">cfgfile</span><span class="p">,</span> <span class="n">quiet</span><span class="p">)</span> <span class="k">as</span> <span class="n">p_state</span><span class="p">:</span>
+    <span class="c1">### Read an image from file</span>
+    <span class="c1"># io.image_read(p_state, &quot;input/spins.ovf&quot;)</span>
+
+    <span class="c1">### Homogeneous background with a skyrmion in the center</span>
+    <span class="n">configuration</span><span class="o">.</span><span class="n">plus_z</span><span class="p">(</span><span class="n">p_state</span><span class="p">)</span>
+    <span class="n">configuration</span><span class="o">.</span><span class="n">skyrmion</span><span class="p">(</span><span class="n">p_state</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">phase</span><span class="o">=-</span><span class="mf">90.0</span><span class="p">)</span>
+
+    <span class="c1">### LLG dynamics simulation using Depondt's Heun-like solver</span>
+    <span class="n">LLG</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">METHOD_LLG</span>
+    <span class="n">DEPONDT</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">SOLVER_DEPONDT</span>
+    <span class="n">simulation</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">p_state</span><span class="p">,</span> <span class="n">LLG</span><span class="p">,</span> <span class="n">DEPONDT</span><span class="p">)</span>
+
+    <span class="c1">### Save the final result to a file</span>
+    <span class="c1"># io.image_write(p_state, &quot;output/final.ovf&quot;)</span></pre>
+            </div>
+          </div>
+          <div class="info-row">
+            <div>
+              <h3>Easy accessibility through our Web App</h3>
+              <p>
+                Spirit also runs in most current browsers, including mobile.
+                The core library of Spirit, as well as the <a href="https://github.com/FlorianRhiem/VFRendering">VFRendering</a>
+                visualisations can be transpiled to web assembly (WASM) using Emscripten.
+                This allows you to simulate spin dynamics right in your browser!
+              </p>
+              <br>
+              <p class="text-center"><a href="web.html" role="button" class="btn btn-primary">Try Spirit Web!</a></p>
+              <br>
+              <p>
+                You can use this tool for demonstration or take a quick look at spin textures you calculated with only a few clicks.
+              </p>
+            </div>
+            <div>
+              <img width=60% src="img/webapp_hopfion.png" alt="Spins simulated using Spirit Web">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
